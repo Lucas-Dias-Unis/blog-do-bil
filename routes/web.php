@@ -15,3 +15,10 @@ Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show')
 // Rotas das categorias
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{slug}', [CategoryController::class, 'show'])->name('categories.show');
+
+// Rota de busca
+Route::get('/search', [PostController::class, 'search'])->name('search.index');
+
+// Rotas das tags
+Route::get('/tags', [TagController::class, 'index'])->name('tags.index');
+Route::get('/tags/{slug}', [TagController::class, 'show'])->name('tags.show');

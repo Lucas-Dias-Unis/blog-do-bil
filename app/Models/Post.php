@@ -40,4 +40,22 @@ class Post extends Model
     {
         return $query->orderBy('created_at', 'desc');
     }
+
+    //Scope para a busca
+    public function scopeSearch($query, $term)
+    {
+        // Agrupa as condições para que o OR funcione corretamente
+        return $query->where(function ($query) use ($term) {
+            $query->where('title', 'like', "%{$term}%")
+                  ->orWhere('content', 'like', "%{$term}%");
+        });
+    }
+
+    // NOVO: Relacionamento Muitos-para-Muitos com Tag
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+    
+    // ... (scopes) ...
 }

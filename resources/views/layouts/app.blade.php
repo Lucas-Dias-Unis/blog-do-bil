@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,61 +11,61 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f4f4f4;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         header {
             background: #2c3e50;
             color: white;
             padding: 1rem 0;
             margin-bottom: 2rem;
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 2rem;
         }
-        
+
         nav ul li a {
             color: white;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         nav ul li a:hover {
             color: #3498db;
         }
-        
+
         main {
             min-height: 70vh;
         }
-        
+
         footer {
             background: #34495e;
             color: white;
@@ -72,31 +73,31 @@
             padding: 2rem 0;
             margin-top: 3rem;
         }
-        
+
         .post-card {
             background: white;
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         .post-title {
             color: #2c3e50;
             margin-bottom: 0.5rem;
         }
-        
+
         .post-meta {
             color: #7f8c8d;
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
-        
+
         .post-excerpt {
             color: #555;
             margin-bottom: 1rem;
         }
-        
+
         .btn {
             display: inline-block;
             background: #3498db;
@@ -106,11 +107,11 @@
             border-radius: 4px;
             transition: background 0.3s;
         }
-        
+
         .btn:hover {
             background: #2980b9;
         }
-        
+
         .category-badge {
             background: #e74c3c;
             color: white;
@@ -120,6 +121,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -132,6 +134,10 @@
                         <li><a href="{{ route('categories.index') }}">Categorias</a></li>
                     </ul>
                 </nav>
+                <form action="{{ route('search.index') }}" method="GET" style="margin-left: 2rem;">
+                    <input type="search" name="query" placeholder="Buscar posts..." required minlength="3" style="padding: 0.4rem; border-radius: 4px; border: 1px solid #ccc;">
+                    <button type="submit" class="btn" style="padding: 0.4rem 0.8rem; margin-left: 5px;">Buscar</button>
+                </form>
             </div>
         </div>
     </header>
@@ -148,4 +154,5 @@
         </div>
     </footer>
 </body>
+
 </html>
